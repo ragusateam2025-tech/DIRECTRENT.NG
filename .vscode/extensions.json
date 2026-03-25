@@ -1,0 +1,35 @@
+{
+  "recommendations": [
+    // Essential
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    
+    // TypeScript
+    "ms-vscode.vscode-typescript-next",
+    
+    // React/Next.js
+    "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
+    "steoates.autoimport",
+    
+    // Git
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+    
+    // Testing
+    "orta.vscode-jest",
+    "ms-playwright.playwright",
+    
+    // Utilities
+    "christian-kohler.path-intellisense",
+    "streetsidesoftware.code-spell-checker",
+    "usernamehw.errorlens",
+    "gruntfuggly.todo-tree",
+    "naumovs.color-highlight",
+    
+    // AI/Claude
+    "anthropic.claude-code"
+  ],
+  "unwantedRecommendations": []
+}

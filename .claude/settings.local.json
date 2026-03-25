@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next:*)",
+      "Bash(mv \"Couples moving into a new home.png\" \"couples-moving.png\")",
+      "Bash(mv \"Direct rent AI ambassador image.png\" \"ai-ambassador.png\")",
+      "Bash(mv \"Female models of Direct Rent.png\" \"female-models.png\")",
+      "Bash(mv \"Guy unpacking stuff in his new home.png\" \"guy-unpacking.png\")",
+      "Bash(mv \"Young man walking into a new home1.png\" \"young-man-new-home-1.png\")",
+      "Bash(mv \"Minimalist apartment grey.png\" \"minimalist-apartment-grey.png\")",
+      "Bash(mv \"Minimalist apartment_luxury.Grey1.png\" \"minimalist-apartment-luxury-grey.png\")",
+      "Bash(mv \"Minimalist Luxury Apartment_Maroon1.png\" \"minimalist-luxury-apartment-maroon.png\")",
+      "Bash(mv \"20260324_0118_Image Generation_remix_01kmek8hkae398p71vr9dh7tnm.png\" \"hero-remix.png\")",
+      "Bash(echo \"exit: $?\")",
+      "Bash(npm install:*)"
+    ]
+  }
+}
