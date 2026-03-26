@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';
@@ -55,7 +56,7 @@ export function FeaturesHero({ activeView, onViewChange }: FeaturesHeroProps) {
       {/* Background lifestyle image */}
       <div className="pointer-events-none absolute inset-0 -z-20">
         <Image
-          src="/images/guy-unpacking.png"
+          src="/images/guy-unpacking.webp"
           alt="Young man confidently unpacking in his new Lagos apartment"
           fill
           className="object-cover object-top opacity-20"
@@ -66,8 +67,8 @@ export function FeaturesHero({ activeView, onViewChange }: FeaturesHeroProps) {
 
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-primary-dark via-primary-medium/40 to-primary-dark" />
-      <div className="pointer-events-none absolute left-1/3 top-10 -z-10 h-80 w-80 rounded-full bg-accent-coral/5 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-0 right-1/4 -z-10 h-64 w-64 rounded-full bg-accent-gold/5 blur-[80px]" />
+      <div className="pointer-events-none absolute left-1/3 top-10 -z-10 size-80 rounded-full bg-accent-coral/5 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-0 right-1/4 -z-10 size-64 rounded-full bg-accent-gold/5 blur-[80px]" />
 
       <Container size="lg">
         <motion.div
@@ -81,7 +82,7 @@ export function FeaturesHero({ activeView, onViewChange }: FeaturesHeroProps) {
             className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/10 px-4 py-1.5"
             variants={iVariants}
           >
-            <span className="h-2 w-2 rounded-full bg-accent-gold animate-pulse-gold" />
+            <span className="size-2 animate-pulse-gold rounded-full bg-accent-gold" />
             <span className="text-sm font-medium text-accent-gold">
               Launching in Yaba &amp; Surulere
             </span>

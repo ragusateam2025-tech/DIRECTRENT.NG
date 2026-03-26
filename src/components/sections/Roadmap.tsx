@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+
 import {
   motion,
   useInView,
@@ -93,8 +94,8 @@ export function Roadmap() {
         <div className="mx-auto max-w-2xl">
           <div className="relative pl-8 sm:pl-10">
             {/* Timeline line */}
-            <div className="absolute bottom-0 left-[7px] top-0 w-0.5 overflow-hidden sm:left-[9px]">
-              <div className="h-full w-full bg-border" />
+            <div className="absolute inset-y-0 left-[7px] w-0.5 overflow-hidden sm:left-[9px]">
+              <div className="size-full bg-border" />
               <motion.div
                 className="absolute left-0 top-0 w-full bg-accent-gold"
                 style={
@@ -112,20 +113,20 @@ export function Roadmap() {
                 <div
                   className={cn(
                     'absolute left-0 top-1 z-10 flex items-center justify-center rounded-full border-2',
-                    'h-4 w-4 sm:h-5 sm:w-5',
+                    'size-4 sm:size-5',
                     milestone.status === 'completed' &&
                       'border-accent-gold bg-accent-gold',
                     milestone.status === 'current' &&
-                      'border-accent-coral bg-accent-coral animate-pulse-gold',
+                      'animate-pulse-gold border-accent-coral bg-accent-coral',
                     milestone.status === 'upcoming' &&
                       'border-border bg-primary-dark'
                   )}
                 >
                   {milestone.status === 'completed' && (
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary-dark sm:h-2 sm:w-2" />
+                    <div className="size-1.5 rounded-full bg-primary-dark sm:size-2" />
                   )}
                   {milestone.status === 'current' && (
-                    <div className="h-1.5 w-1.5 rounded-full bg-white sm:h-2 sm:w-2" />
+                    <div className="size-1.5 rounded-full bg-white sm:size-2" />
                   )}
                 </div>
               );
@@ -150,7 +151,7 @@ export function Roadmap() {
                     <div className="mb-3 flex items-center gap-3">
                       <div
                         className={cn(
-                          'flex h-9 w-9 shrink-0 items-center justify-center rounded-lg',
+                          'flex size-9 shrink-0 items-center justify-center rounded-lg',
                           milestone.status === 'completed' && 'bg-accent-gold/10',
                           milestone.status === 'current' && 'bg-accent-coral/10',
                           milestone.status === 'upcoming' && 'bg-white/5'
@@ -158,7 +159,7 @@ export function Roadmap() {
                       >
                         <Icon
                           className={cn(
-                            'h-5 w-5',
+                            'size-5',
                             milestone.status === 'completed' && 'text-accent-gold',
                             milestone.status === 'current' && 'text-accent-coral',
                             milestone.status === 'upcoming' && 'text-text-muted'

@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';

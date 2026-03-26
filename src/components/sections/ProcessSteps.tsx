@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef } from 'react';
+
 import Image from 'next/image';
+
 import {
   motion,
   useInView,
@@ -168,18 +170,18 @@ export function ProcessSteps({ activeView }: ProcessStepsProps) {
                   className="group relative rounded-2xl border border-border bg-primary-medium p-6 transition-shadow duration-200 hover:shadow-card-hover md:p-8"
                 >
                   {/* Step number badge */}
-                  <div className="absolute -top-4 left-6 flex h-8 w-8 items-center justify-center rounded-full bg-accent-coral font-display text-sm font-bold text-white shadow-button">
+                  <div className="absolute -top-4 left-6 flex size-8 items-center justify-center rounded-full bg-accent-coral font-display text-sm font-bold text-white shadow-button">
                     {step.number}
                   </div>
 
                   <div className="mt-2 flex items-start gap-4">
                     <div
                       className={cn(
-                        'flex h-12 w-12 shrink-0 items-center justify-center rounded-xl',
+                        'flex size-12 shrink-0 items-center justify-center rounded-xl',
                         step.bg
                       )}
                     >
-                      <Icon className={cn('h-6 w-6', step.color)} aria-hidden="true" />
+                      <Icon className={cn('size-6', step.color)} aria-hidden="true" />
                     </div>
                     <div>
                       <h3 className="font-display text-lg font-semibold text-text-primary">
@@ -205,7 +207,7 @@ export function ProcessSteps({ activeView }: ProcessStepsProps) {
         >
           <div className="relative aspect-[19/6] sm:aspect-[16/7] lg:aspect-[21/9]">
             <Image
-              src="/images/double-couple-2.jpg"
+              src="/images/double-couple-2.webp"
               alt="Two couples relaxing together in a beautifully furnished Lagos apartment found through Directrent"
               fill
               className="object-cover object-center"
@@ -213,7 +215,7 @@ export function ProcessSteps({ activeView }: ProcessStepsProps) {
               quality={85}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/70 via-primary-dark/30 to-transparent" />
-            <div className="absolute bottom-6 left-6 right-6 max-w-md">
+            <div className="absolute inset-x-6 bottom-6 max-w-md">
               <p className="font-display text-lg font-bold text-white sm:text-xl">
                 From Search to Settled
               </p>

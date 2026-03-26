@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef } from 'react';
+
 import Link from 'next/link';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -23,7 +25,7 @@ export function AboutCTA() {
     <section ref={ref} className="relative overflow-hidden py-12 sm:py-16 md:py-20">
         {/* Background */}
         <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-r from-accent-coral/5 via-transparent to-accent-gold/5" />
-        <div className="pointer-events-none absolute -bottom-20 left-1/2 -z-10 h-80 w-80 -translate-x-1/2 rounded-full bg-accent-coral/5 blur-[100px]" />
+        <div className="pointer-events-none absolute -bottom-20 left-1/2 -z-10 size-80 -translate-x-1/2 rounded-full bg-accent-coral/5 blur-[100px]" />
 
         <Container size="lg">
           {/* Stats row */}
@@ -65,7 +67,7 @@ export function AboutCTA() {
               <Button asChild size="lg" fullWidth className="sm:w-auto">
                 <Link href="/waitlist">
                   Join as Tenant
-                  <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                  <ArrowRight className="ml-2 size-5" aria-hidden="true" />
                 </Link>
               </Button>
               <Button asChild variant="outline" size="lg" fullWidth className="sm:w-auto">

@@ -28,33 +28,37 @@ function QRCode({ url, size = 160, className }: QRCodeProps) {
 
     if (inFinderPattern(row, col)) {
       // Outer border
-      if (row === 0 || row === 6 || col === 0 || col === 6) return true;
-      if (row >= cells - 7 && (row === cells - 7 || row === cells - 1))
+      if (row === 0 || row === 6 || col === 0 || col === 6) { return true; }
+      if (row >= cells - 7 && (row === cells - 7 || row === cells - 1)) {
         return true;
-      if (col >= cells - 7 && (col === cells - 7 || col === cells - 1))
+      }
+      if (col >= cells - 7 && (col === cells - 7 || col === cells - 1)) {
         return true;
+      }
       // Inner square
-      if (row >= 2 && row <= 4 && col >= 2 && col <= 4) return true;
+      if (row >= 2 && row <= 4 && col >= 2 && col <= 4) { return true; }
       if (
         row >= cells - 5 &&
         row <= cells - 3 &&
         col >= 2 &&
         col <= 4
-      )
+      ) {
         return true;
+      }
       if (
         row >= 2 &&
         row <= 4 &&
         col >= cells - 5 &&
         col <= cells - 3
-      )
+      ) {
         return true;
+      }
       return false;
     }
 
     // Timing pattern
-    if (row === 6) return col % 2 === 0;
-    if (col === 6) return row % 2 === 0;
+    if (row === 6) { return col % 2 === 0; }
+    if (col === 6) { return row % 2 === 0; }
 
     // Pseudo-random data area based on URL hash
     const hash =

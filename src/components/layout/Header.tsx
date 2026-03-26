@@ -1,13 +1,16 @@
 'use client';
 
 import * as React from 'react';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 
-import { cn } from '@/lib/utils';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+
 import { NAV_LINKS, SITE_CONFIG } from '@/lib/constants';
+import { cn } from '@/lib/utils';
+
 import { Container } from './Container';
 
 export function Header() {
@@ -45,7 +48,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed left-0 right-0 top-0 z-50 transition-all duration-300',
+        'fixed inset-x-0 top-0 z-50 transition-all duration-300',
         isScrolled
           ? 'bg-primary-dark/95 py-3 shadow-lg backdrop-blur-md'
           : 'bg-transparent py-4'
@@ -99,9 +102,9 @@ export function Header() {
             data-testid="mobile-menu-button"
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="size-6" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="size-6" />
             )}
           </button>
         </nav>

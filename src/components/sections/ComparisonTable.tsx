@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { Check, X } from 'lucide-react';
 
@@ -139,9 +140,9 @@ export function ComparisonTable() {
               </div>
               <div className="flex items-center justify-center gap-2 px-6 py-4 text-center text-sm" role="cell">
                 {row.traditional.positive ? (
-                  <Check className="h-5 w-5 shrink-0 text-green-500" aria-label="Yes" />
+                  <Check className="size-5 shrink-0 text-green-500" aria-label="Yes" />
                 ) : (
-                  <X className="h-5 w-5 shrink-0 text-red-500" aria-label="No" />
+                  <X className="size-5 shrink-0 text-red-500" aria-label="No" />
                 )}
                 <span className={row.traditional.positive ? 'text-text-primary' : 'text-text-muted'}>
                   {row.traditional.text}
@@ -149,9 +150,9 @@ export function ComparisonTable() {
               </div>
               <div className="flex items-center justify-center gap-2 px-6 py-4 text-center text-sm" role="cell">
                 {row.directrent.positive ? (
-                  <Check className="h-5 w-5 shrink-0 text-green-500" aria-label="Yes" />
+                  <Check className="size-5 shrink-0 text-green-500" aria-label="Yes" />
                 ) : (
-                  <X className="h-5 w-5 shrink-0 text-red-500" aria-label="No" />
+                  <X className="size-5 shrink-0 text-red-500" aria-label="No" />
                 )}
                 <span className={cn('font-medium', row.directrent.positive ? 'text-accent-gold' : 'text-text-muted')}>
                   {row.directrent.text}
@@ -186,9 +187,9 @@ export function ComparisonTable() {
                   </p>
                   <div className="flex items-center gap-1.5">
                     {row.traditional.positive ? (
-                      <Check className="h-4 w-4 shrink-0 text-green-500" aria-label="Yes" />
+                      <Check className="size-4 shrink-0 text-green-500" aria-label="Yes" />
                     ) : (
-                      <X className="h-4 w-4 shrink-0 text-red-500" aria-label="No" />
+                      <X className="size-4 shrink-0 text-red-500" aria-label="No" />
                     )}
                     <span className={cn(
                       'text-sm',
@@ -204,9 +205,9 @@ export function ComparisonTable() {
                   </p>
                   <div className="flex items-center gap-1.5">
                     {row.directrent.positive ? (
-                      <Check className="h-4 w-4 shrink-0 text-green-500" aria-label="Yes" />
+                      <Check className="size-4 shrink-0 text-green-500" aria-label="Yes" />
                     ) : (
-                      <X className="h-4 w-4 shrink-0 text-red-500" aria-label="No" />
+                      <X className="size-4 shrink-0 text-red-500" aria-label="No" />
                     )}
                     <span className={cn(
                       'text-sm font-medium',

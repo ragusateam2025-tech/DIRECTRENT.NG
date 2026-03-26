@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 import { StoreButton } from '@/components/ui/StoreButton';
@@ -17,7 +18,7 @@ export function DownloadCTA() {
     let ticking = false;
 
     function onScroll() {
-      if (ticking) return;
+      if (ticking) { return; }
       ticking = true;
 
       requestAnimationFrame(() => {

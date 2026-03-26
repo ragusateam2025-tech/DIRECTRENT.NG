@@ -1,19 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, useReducedMotion } from 'framer-motion';
 import { CheckCircle, AlertCircle, Send } from 'lucide-react';
+import { useForm } from 'react-hook-form';
 
+import { Container } from '@/components/layout';
 import { BlogHero } from '@/components/sections/BlogHero';
 import { BlogPostCard } from '@/components/sections/BlogPostCard';
-import { Container } from '@/components/layout';
-import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
 import { getPostsByCategory, BLOG_CATEGORIES } from '@/lib/blog';
-import { newsletterSchema, type NewsletterFormData } from '@/lib/validations';
 import { cn } from '@/lib/utils';
+import { newsletterSchema, type NewsletterFormData } from '@/lib/validations';
 
 export default function BlogPage() {
   const prefersReducedMotion = useReducedMotion();
@@ -41,7 +42,7 @@ export default function BlogPage() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Failed');
+      if (!response.ok) { throw new Error('Failed'); }
 
       setNewsletterState('success');
       reset();
@@ -116,7 +117,7 @@ export default function BlogPage() {
 
             {newsletterState === 'success' ? (
               <div className="mx-auto mt-6 flex items-center justify-center gap-2 text-success">
-                <CheckCircle className="h-5 w-5" aria-hidden="true" />
+                <CheckCircle className="size-5" aria-hidden="true" />
                 <span className="text-sm font-medium">
                   You&apos;re subscribed! Check your inbox.
                 </span>
@@ -142,7 +143,7 @@ export default function BlogPage() {
                   loading={isSubmitting}
                   rightIcon={
                     !isSubmitting ? (
-                      <Send className="h-4 w-4" aria-hidden="true" />
+                      <Send className="size-4" aria-hidden="true" />
                     ) : undefined
                   }
                 >
@@ -153,7 +154,7 @@ export default function BlogPage() {
 
             {newsletterState === 'error' && (
               <div className="mx-auto mt-3 flex items-center justify-center gap-2 text-error">
-                <AlertCircle className="h-4 w-4" aria-hidden="true" />
+                <AlertCircle className="size-4" aria-hidden="true" />
                 <span className="text-xs">
                   Something went wrong. Please try again.
                 </span>

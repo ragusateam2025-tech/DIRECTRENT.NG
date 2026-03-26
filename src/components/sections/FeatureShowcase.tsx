@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+
 import {
   motion,
   AnimatePresence,
@@ -244,12 +245,12 @@ export function FeatureShowcase({ activeView }: FeatureShowcaseProps) {
                 >
                   <div
                     className={cn(
-                      'flex h-12 w-12 items-center justify-center rounded-xl',
+                      'flex size-12 items-center justify-center rounded-xl',
                       feature.bg
                     )}
                   >
                     <Icon
-                      className={cn('h-6 w-6', feature.color)}
+                      className={cn('size-6', feature.color)}
                       aria-hidden="true"
                     />
                   </div>

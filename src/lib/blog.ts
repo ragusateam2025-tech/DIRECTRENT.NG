@@ -108,7 +108,7 @@ export function getPostBySlug(slug: string): BlogPost | undefined {
 }
 
 export function getPostsByCategory(category: string): BlogPost[] {
-  if (category === 'all') return getAllPosts();
+  if (category === 'all') { return getAllPosts(); }
   return getAllPosts().filter((post) => post.category === category);
 }
 

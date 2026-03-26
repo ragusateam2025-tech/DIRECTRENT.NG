@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import {
   MessageSquare,
@@ -129,7 +130,7 @@ export function AppFeatures() {
 
         {/* Feature grid */}
         <motion.div
-          className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3"
           variants={cVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
@@ -151,12 +152,12 @@ export function AppFeatures() {
             >
               <div
                 className={cn(
-                  'mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl',
+                  'mb-4 inline-flex size-12 items-center justify-center rounded-xl',
                   item.bg
                 )}
               >
                 <item.icon
-                  className={cn('h-6 w-6', item.color)}
+                  className={cn('size-6', item.color)}
                   aria-hidden="true"
                 />
               </div>

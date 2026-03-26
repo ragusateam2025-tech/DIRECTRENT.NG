@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { Lock, Shield, UserCheck } from 'lucide-react';
 
@@ -95,11 +96,11 @@ export function SecurityFeatures() {
               >
                 <div
                   className={cn(
-                    'mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-xl',
+                    'mx-auto mb-5 flex size-14 items-center justify-center rounded-xl',
                     feature.bg
                   )}
                 >
-                  <Icon className={cn('h-7 w-7', feature.color)} aria-hidden="true" />
+                  <Icon className={cn('size-7', feature.color)} aria-hidden="true" />
                 </div>
                 <h3 className="font-display text-lg font-semibold text-text-primary">
                   {feature.title}

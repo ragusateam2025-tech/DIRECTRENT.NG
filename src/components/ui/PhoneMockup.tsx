@@ -46,7 +46,7 @@ function PhoneMockup({ className }: PhoneMockupProps) {
 
           {/* Search bar */}
           <div className="mb-4 flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2.5">
-            <div className="h-4 w-4 rounded-full bg-accent-gold/60" />
+            <div className="size-4 rounded-full bg-accent-gold/60" />
             <div className="h-2 w-24 rounded-full bg-white/20" />
           </div>
 
@@ -67,7 +67,7 @@ function PhoneMockup({ className }: PhoneMockupProps) {
                 <div className="h-2 w-1/2 rounded-full bg-white/15" />
                 <div className="flex items-center justify-between">
                   <div className="h-3 w-20 rounded-full bg-accent-gold/50" />
-                  <div className="h-6 w-6 rounded-full bg-accent-coral/40" />
+                  <div className="size-6 rounded-full bg-accent-coral/40" />
                 </div>
               </div>
             </div>
@@ -80,21 +80,21 @@ function PhoneMockup({ className }: PhoneMockupProps) {
                 <div className="h-2 w-2/5 rounded-full bg-white/15" />
                 <div className="flex items-center justify-between">
                   <div className="h-3 w-16 rounded-full bg-accent-gold/50" />
-                  <div className="h-6 w-6 rounded-full bg-accent-coral/40" />
+                  <div className="size-6 rounded-full bg-accent-coral/40" />
                 </div>
               </div>
             </div>
           </div>
 
           {/* Bottom navigation */}
-          <div className="absolute bottom-4 left-4 right-4 flex items-center justify-around rounded-2xl bg-white/5 px-4 py-3 backdrop-blur-sm">
-            <div className="h-5 w-5 rounded bg-accent-coral/60" />
-            <div className="h-5 w-5 rounded bg-white/20" />
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-coral">
-              <div className="h-3 w-3 rounded-sm bg-white" />
+          <div className="absolute inset-x-4 bottom-4 flex items-center justify-around rounded-2xl bg-white/5 px-4 py-3 backdrop-blur-sm">
+            <div className="size-5 rounded bg-accent-coral/60" />
+            <div className="size-5 rounded bg-white/20" />
+            <div className="flex size-8 items-center justify-center rounded-full bg-accent-coral">
+              <div className="size-3 rounded-sm bg-white" />
             </div>
-            <div className="h-5 w-5 rounded bg-white/20" />
-            <div className="h-5 w-5 rounded-full bg-white/20" />
+            <div className="size-5 rounded bg-white/20" />
+            <div className="size-5 rounded-full bg-white/20" />
           </div>
         </div>
       </div>

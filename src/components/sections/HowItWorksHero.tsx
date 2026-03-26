@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+
 import { motion, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';
@@ -45,7 +46,7 @@ export function HowItWorksHero({ activeView, onViewChange }: HowItWorksHeroProps
       {/* Background lifestyle image */}
       <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden">
         <Image
-          src="/images/female-models.png"
+          src="/images/female-models.webp"
           alt="Happy Directrent users exploring rental options in Lagos"
           fill
           className="object-cover object-top opacity-15"
@@ -56,8 +57,8 @@ export function HowItWorksHero({ activeView, onViewChange }: HowItWorksHeroProps
 
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-primary-dark via-primary-medium/40 to-primary-dark" />
-      <div className="pointer-events-none absolute left-1/3 top-10 -z-10 h-80 w-80 rounded-full bg-accent-coral/5 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-0 right-1/4 -z-10 h-64 w-64 rounded-full bg-accent-gold/5 blur-[80px]" />
+      <div className="pointer-events-none absolute left-1/3 top-10 -z-10 size-80 rounded-full bg-accent-coral/5 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-0 right-1/4 -z-10 size-64 rounded-full bg-accent-gold/5 blur-[80px]" />
 
       <Container size="lg">
         <motion.div

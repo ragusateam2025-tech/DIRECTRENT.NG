@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';
@@ -40,9 +41,9 @@ export function ProcessTimeline({ activeView }: ProcessTimelineProps) {
         <div className="hidden md:block">
           <div className="relative flex items-center justify-between">
             {/* Connecting line */}
-            <div className="absolute left-[calc(12.5%)] right-[calc(12.5%)] top-5 h-0.5 bg-border" />
+            <div className="absolute inset-x-[calc(12.5%)] top-5 h-0.5 bg-border" />
             <motion.div
-              className="absolute left-[calc(12.5%)] right-[calc(12.5%)] top-5 h-0.5 origin-left bg-accent-coral"
+              className="absolute inset-x-[calc(12.5%)] top-5 h-0.5 origin-left bg-accent-coral"
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
               transition={
@@ -63,7 +64,7 @@ export function ProcessTimeline({ activeView }: ProcessTimelineProps) {
                 {/* Dot */}
                 <div
                   className={cn(
-                    'flex h-10 w-10 items-center justify-center rounded-full border-2 font-display text-sm font-bold',
+                    'flex size-10 items-center justify-center rounded-full border-2 font-display text-sm font-bold',
                     'border-accent-coral bg-primary-dark text-accent-coral'
                   )}
                 >
@@ -81,7 +82,7 @@ export function ProcessTimeline({ activeView }: ProcessTimelineProps) {
         <div className="md:hidden">
           <div className="relative ml-5 border-l-2 border-border pl-8">
             <motion.div
-              className="absolute bottom-0 left-[-1px] top-0 w-0.5 origin-top bg-accent-coral"
+              className="absolute inset-y-0 -left-px w-0.5 origin-top bg-accent-coral"
               initial={{ scaleY: 0 }}
               animate={isInView ? { scaleY: 1 } : { scaleY: 0 }}
               transition={
@@ -100,7 +101,7 @@ export function ProcessTimeline({ activeView }: ProcessTimelineProps) {
                 transition={{ duration: 0.4, delay: prefersReducedMotion ? 0 : 0.3 + i * 0.2 }}
               >
                 {/* Dot */}
-                <div className="absolute -left-[37px] flex h-8 w-8 items-center justify-center rounded-full border-2 border-accent-coral bg-primary-dark font-display text-xs font-bold text-accent-coral">
+                <div className="absolute -left-[37px] flex size-8 items-center justify-center rounded-full border-2 border-accent-coral bg-primary-dark font-display text-xs font-bold text-accent-coral">
                   {i + 1}
                 </div>
                 <p className="text-sm font-medium text-text-primary">{label}</p>

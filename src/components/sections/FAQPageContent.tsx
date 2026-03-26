@@ -1,9 +1,11 @@
 'use client';
 
 import { useRef, useState, useEffect } from 'react';
+
+import Link from 'next/link';
+
 import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
-import Link from 'next/link';
 
 import { Container } from '@/components/layout';
 import { Button } from '@/components/ui';
@@ -278,7 +280,7 @@ export function FAQPageContent() {
                     onClick={() => toggle(i)}
                     aria-expanded={isOpen}
                     className={cn(
-                      'flex w-full min-h-[48px] items-center justify-between gap-4 p-4 sm:p-6 text-left transition-colors',
+                      'flex min-h-[48px] w-full items-center justify-between gap-4 p-4 text-left transition-colors sm:p-6',
                       'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-accent-coral',
                       'hover:bg-background-elevated'
                     )}
@@ -296,7 +298,7 @@ export function FAQPageContent() {
                       className="shrink-0"
                     >
                       <ChevronDown
-                        className="h-5 w-5 text-text-muted"
+                        className="size-5 text-text-muted"
                         aria-hidden="true"
                       />
                     </motion.span>

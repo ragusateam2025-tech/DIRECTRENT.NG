@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef } from 'react';
+
 import Image from 'next/image';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { ShieldCheck, CreditCard, Scale } from 'lucide-react';
 
@@ -104,7 +106,7 @@ export function SocialProof() {
               {/* Image */}
               <div className="relative aspect-square md:col-span-2 md:aspect-auto md:h-full">
                 <Image
-                  src="/images/ai-ambassador.png"
+                  src="/images/ai-ambassador.webp"
                   alt="Directrent AI-powered verification ambassador ensuring trust and safety"
                   fill
                   className="object-cover"
@@ -116,7 +118,7 @@ export function SocialProof() {
               {/* Content */}
               <div className="p-6 sm:p-8 md:col-span-3">
                 <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-success/10 px-3 py-1">
-                  <ShieldCheck className="h-4 w-4 text-success" aria-hidden="true" />
+                  <ShieldCheck className="size-4 text-success" aria-hidden="true" />
                   <span className="text-xs font-semibold text-success">
                     AI-POWERED VERIFICATION
                   </span>
@@ -139,7 +141,7 @@ export function SocialProof() {
                         className="flex items-center gap-1.5 rounded-full border border-border bg-primary-dark/50 px-3 py-1.5"
                       >
                         <Icon
-                          className={cn('h-4 w-4', badge.color)}
+                          className={cn('size-4', badge.color)}
                           aria-hidden="true"
                         />
                         <span className="text-xs font-medium text-text-secondary">

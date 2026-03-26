@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
-import { useForm } from 'react-hook-form';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import {
@@ -12,13 +12,14 @@ import {
   AlertCircle,
   Send,
 } from 'lucide-react';
+import { useForm } from 'react-hook-form';
 
 import { Container } from '@/components/layout';
-import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
-import { contactSchema, type ContactFormData } from '@/lib/validations';
+import { Input } from '@/components/ui/Input';
 import { SITE_CONFIG, SOCIAL_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { contactSchema, type ContactFormData } from '@/lib/validations';
 
 const socialLinks = [
   { label: 'Twitter', href: SOCIAL_LINKS.twitter },
@@ -70,7 +71,7 @@ export function ContactForm() {
         <div className="grid gap-8 lg:grid-cols-5">
           {/* Contact info — appears first on mobile for context */}
           <motion.div
-            className="lg:col-span-2 lg:order-2"
+            className="lg:order-2 lg:col-span-2"
             initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
@@ -86,8 +87,8 @@ export function ContactForm() {
                   href={`mailto:${SITE_CONFIG.email}`}
                   className="flex items-start gap-4 rounded-lg p-2 transition-colors hover:bg-white/5"
                 >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-coral/10">
-                    <Mail className="h-5 w-5 text-accent-coral" aria-hidden="true" />
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-coral/10">
+                    <Mail className="size-5 text-accent-coral" aria-hidden="true" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-text-primary">Email</p>
@@ -97,8 +98,8 @@ export function ContactForm() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4 p-2">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-accent-gold/10">
-                    <Phone className="h-5 w-5 text-accent-gold" aria-hidden="true" />
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-gold/10">
+                    <Phone className="size-5 text-accent-gold" aria-hidden="true" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-text-primary">Phone</p>
@@ -108,8 +109,8 @@ export function ContactForm() {
 
                 {/* Location */}
                 <div className="flex items-start gap-4 p-2">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-success/10">
-                    <MapPin className="h-5 w-5 text-success" aria-hidden="true" />
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-success/10">
+                    <MapPin className="size-5 text-success" aria-hidden="true" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-text-primary">Location</p>
@@ -152,7 +153,7 @@ export function ContactForm() {
 
           {/* Form — appears second on mobile */}
           <motion.div
-            className="lg:col-span-3 lg:order-1"
+            className="lg:order-1 lg:col-span-3"
             initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
@@ -165,8 +166,8 @@ export function ContactForm() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
-                    <CheckCircle className="h-8 w-8 text-success" aria-hidden="true" />
+                  <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-success/10">
+                    <CheckCircle className="size-8 text-success" aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-2xl font-bold text-text-primary">
                     Message Sent!
@@ -298,7 +299,7 @@ export function ContactForm() {
                   {/* Error banner */}
                   {submitState === 'error' && (
                     <div className="flex items-center gap-3 rounded-lg border border-error/20 bg-error/10 p-4">
-                      <AlertCircle className="h-5 w-5 shrink-0 text-error" aria-hidden="true" />
+                      <AlertCircle className="size-5 shrink-0 text-error" aria-hidden="true" />
                       <p className="text-sm text-error">
                         Something went wrong. Please try again or email us
                         directly at{' '}
@@ -321,7 +322,7 @@ export function ContactForm() {
                     loading={isSubmitting}
                     rightIcon={
                       !isSubmitting ? (
-                        <Send className="h-5 w-5" aria-hidden="true" />
+                        <Send className="size-5" aria-hidden="true" />
                       ) : undefined
                     }
                   >

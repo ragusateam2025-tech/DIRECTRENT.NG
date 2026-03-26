@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { HelpCircle, Copy, Check } from 'lucide-react';
 
@@ -73,7 +74,7 @@ function Tooltip({
           className="absolute bottom-full left-1/2 z-20 mb-2 w-56 -translate-x-1/2 rounded-lg border border-border bg-primary-dark p-3 text-xs leading-relaxed text-text-secondary shadow-card"
         >
           {content}
-          <span className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 border-b border-r border-border bg-primary-dark" />
+          <span className="absolute -bottom-1 left-1/2 size-2 -translate-x-1/2 rotate-45 border-b border-r border-border bg-primary-dark" />
         </span>
       )}
     </span>
@@ -175,7 +176,7 @@ export function ResearchBacked() {
                 {metric.tooltip && (
                   <Tooltip content={metric.tooltip}>
                     <HelpCircle
-                      className="h-3.5 w-3.5 text-text-muted transition-colors hover:text-accent-gold"
+                      className="size-3.5 text-text-muted transition-colors hover:text-accent-gold"
                       aria-hidden="true"
                     />
                   </Tooltip>
@@ -215,12 +216,12 @@ export function ResearchBacked() {
             >
               {copied ? (
                 <>
-                  <Check className="h-3.5 w-3.5" aria-hidden="true" />
+                  <Check className="size-3.5" aria-hidden="true" />
                   Copied!
                 </>
               ) : (
                 <>
-                  <Copy className="h-3.5 w-3.5" aria-hidden="true" />
+                  <Copy className="size-3.5" aria-hidden="true" />
                   Copy Citation
                 </>
               )}

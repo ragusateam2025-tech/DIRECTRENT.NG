@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useState, useCallback } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { AlertTriangle, Clock, Ghost, ShieldOff, TrendingDown, Ban } from 'lucide-react';
 
@@ -219,9 +220,9 @@ export function ProblemSection() {
                     onMouseEnter={() => handlePainPointHover(i)}
                     onMouseLeave={() => handlePainPointHover(null)}
                   >
-                    <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-error/10">
+                    <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-error/10">
                       <Icon
-                        className="h-5 w-5 text-error"
+                        className="size-5 text-error"
                         aria-hidden="true"
                       />
                     </div>

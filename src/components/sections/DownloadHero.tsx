@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+
 import Image from 'next/image';
+
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';
-import { StoreButton } from '@/components/ui/StoreButton';
 import { QRCode } from '@/components/ui/QRCode';
+import { StoreButton } from '@/components/ui/StoreButton';
 
 const APPLE_STORE_URL = 'https://apps.apple.com/app/directrent';
 const GOOGLE_PLAY_URL =
@@ -16,10 +18,10 @@ const QR_CODE_URL = 'https://directrent.ng/';
 type Platform = 'ios' | 'android' | 'desktop';
 
 function detectPlatform(): Platform {
-  if (typeof navigator === 'undefined') return 'desktop';
+  if (typeof navigator === 'undefined') { return 'desktop'; }
   const ua = navigator.userAgent;
-  if (/iPad|iPhone|iPod/.test(ua)) return 'ios';
-  if (/android/i.test(ua)) return 'android';
+  if (/iPad|iPhone|iPod/.test(ua)) { return 'ios'; }
+  if (/android/i.test(ua)) { return 'android'; }
   return 'desktop';
 }
 
@@ -81,15 +83,15 @@ export function DownloadHero() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[calc(100vh-5rem)] lg:min-h-[100svh] overflow-hidden"
+      className="relative min-h-[calc(100vh-5rem)] overflow-hidden lg:min-h-svh"
     >
       {/* Background lifestyle image with parallax */}
       <motion.div
-        className="absolute inset-0 min-h-full -z-20"
+        className="absolute inset-0 -z-20 min-h-full"
         style={prefersReducedMotion || !isDesktop ? {} : { y: imageY }}
       >
         <Image
-          src="/images/couples-moving.png"
+          src="/images/couples-moving.webp"
           alt="Happy couple moving into their new Lagos apartment through Directrent"
           fill
           priority
@@ -108,7 +110,7 @@ export function DownloadHero() {
       {/* Extra bottom gradient for seamless transition */}
       <div className="absolute inset-x-0 bottom-0 -z-10 h-32 bg-gradient-to-t from-primary-dark to-transparent" />
 
-      <Container size="xl" className="relative flex min-h-[calc(100vh-5rem)] lg:min-h-[100svh] items-center">
+      <Container size="xl" className="relative flex min-h-[calc(100vh-5rem)] items-center lg:min-h-svh">
         <motion.div
           className="grid w-full items-center gap-8 py-24 lg:grid-cols-2 lg:gap-16 lg:py-32"
           variants={variants}
@@ -121,7 +123,7 @@ export function DownloadHero() {
               className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/10 px-4 py-1.5"
               variants={childVariants}
             >
-              <span className="h-2 w-2 rounded-full bg-accent-gold animate-pulse-gold" />
+              <span className="size-2 animate-pulse-gold rounded-full bg-accent-gold" />
               <span className="text-sm font-medium text-accent-gold">
                 Now in Yaba & Surulere
               </span>
@@ -136,7 +138,7 @@ export function DownloadHero() {
             </motion.h1>
 
             <motion.p
-              className="mt-6 max-w-xl text-lg text-text-secondary md:text-xl lg:mx-0 mx-auto"
+              className="mx-auto mt-6 max-w-xl text-lg text-text-secondary md:text-xl lg:mx-0"
               variants={childVariants}
             >
               Skip the agents. Save up to ₦300,000 in rental fees. Connect directly with
@@ -180,15 +182,15 @@ export function DownloadHero() {
               variants={childVariants}
             >
               <span className="flex items-center gap-1.5">
-                <span className="inline-block h-2 w-2 rounded-full bg-success" />
+                <span className="inline-block size-2 rounded-full bg-success" />
                 Free to download
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="inline-block h-2 w-2 rounded-full bg-success" />
+                <span className="inline-block size-2 rounded-full bg-success" />
                 BVN/NIN verified
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="inline-block h-2 w-2 rounded-full bg-success" />
+                <span className="inline-block size-2 rounded-full bg-success" />
                 Paystack secured
               </span>
             </motion.div>
@@ -201,7 +203,7 @@ export function DownloadHero() {
           >
             <div className="relative h-[500px] w-[400px] overflow-hidden rounded-3xl border border-white/10 shadow-card">
               <Image
-                src="/images/young-man-new-home-1.png"
+                src="/images/young-man-new-home-1.webp"
                 alt="Young man happily settling into his new Lagos apartment"
                 fill
                 className="object-cover object-top"
@@ -210,7 +212,7 @@ export function DownloadHero() {
               />
               {/* Subtle overlay on the card */}
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6">
+              <div className="absolute inset-x-6 bottom-6">
                 <p className="text-sm font-medium text-white/90">
                   &ldquo;Saved ₦200,000+ in agency fees&rdquo;
                 </p>

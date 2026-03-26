@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef, useCallback } from 'react';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 import { Eye, Users, Wallet, MapPin } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
@@ -72,7 +73,7 @@ function MagneticCard({ value }: { value: Value }) {
 
   const handleMouseMove = useCallback(
     (e: React.MouseEvent<HTMLDivElement>) => {
-      if (prefersReducedMotion || !cardRef.current) return;
+      if (prefersReducedMotion || !cardRef.current) { return; }
       const rect = cardRef.current.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width) * 100;
       const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -95,11 +96,11 @@ function MagneticCard({ value }: { value: Value }) {
     >
       <div
         className={cn(
-          'mb-5 flex h-12 w-12 items-center justify-center rounded-xl',
+          'mb-5 flex size-12 items-center justify-center rounded-xl',
           value.bg
         )}
       >
-        <Icon className={cn('h-6 w-6', value.color)} aria-hidden="true" />
+        <Icon className={cn('size-6', value.color)} aria-hidden="true" />
       </div>
       <h3 className="font-display text-lg font-semibold text-text-primary">
         {value.title}
@@ -144,7 +145,7 @@ export function CompanyValues() {
         {/* Mobile: horizontal scroll */}
         <div className="overflow-hidden md:hidden">
           <motion.div
-            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pl-4 pb-6 scrollbar-hide"
+            className="scrollbar-hide flex snap-x snap-mandatory gap-4 overflow-x-auto pb-6 pl-4"
             initial={prefersReducedMotion ? false : { opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.4 }}
@@ -158,11 +159,11 @@ export function CompanyValues() {
                 >
                   <div
                     className={cn(
-                      'mb-5 flex h-12 w-12 items-center justify-center rounded-xl',
+                      'mb-5 flex size-12 items-center justify-center rounded-xl',
                       value.bg
                     )}
                   >
-                    <Icon className={cn('h-6 w-6', value.color)} aria-hidden="true" />
+                    <Icon className={cn('size-6', value.color)} aria-hidden="true" />
                   </div>
                   <h3 className="font-display text-lg font-semibold text-text-primary">
                     {value.title}
@@ -181,7 +182,7 @@ export function CompanyValues() {
             {values.map((v) => (
               <div
                 key={v.title}
-                className="h-1.5 w-1.5 rounded-full bg-text-muted"
+                className="size-1.5 rounded-full bg-text-muted"
               />
             ))}
           </div>

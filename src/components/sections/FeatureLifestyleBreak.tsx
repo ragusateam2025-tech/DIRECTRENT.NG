@@ -1,20 +1,22 @@
 'use client';
 
 import { useRef } from 'react';
+
 import Image from 'next/image';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';
 
 const cards = [
   {
-    src: '/images/minimalist-apartment-grey.png',
+    src: '/images/minimalist-apartment-grey.webp',
     alt: 'Modern minimalist apartment interior available on Directrent',
     title: 'Verified Properties',
     subtitle: 'Every listing on Directrent.ng is inspected and authenticated.',
   },
   {
-    src: '/images/minimalist-luxury-apartment-maroon.png',
+    src: '/images/minimalist-luxury-apartment-maroon.webp',
     alt: 'Luxury maroon-accented apartment available through Directrent',
     title: 'Quality Spaces',
     subtitle: 'From studio apartments to family homes across Lagos.',
@@ -69,7 +71,7 @@ export function FeatureLifestyleBreak() {
             <motion.div
               key={card.title}
               variants={iVariants}
-              className="group relative overflow-hidden rounded-2xl aspect-[16/10] md:aspect-[16/9]"
+              className="group relative aspect-[16/10] overflow-hidden rounded-2xl md:aspect-[16/9]"
             >
               <Image
                 src={card.src}
@@ -80,7 +82,7 @@ export function FeatureLifestyleBreak() {
                 quality={80}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-primary-dark/30 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 sm:bottom-6 sm:left-6 sm:right-6">
+              <div className="absolute inset-x-5 bottom-5 sm:inset-x-6 sm:bottom-6">
                 <h3 className="font-display text-xl font-bold text-white sm:text-2xl">
                   {card.title}
                 </h3>

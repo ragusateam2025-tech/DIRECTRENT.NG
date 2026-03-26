@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+
 import { ArrowRight } from 'lucide-react';
 
 import { type BlogPost, formatDate } from '@/lib/blog';
@@ -24,7 +25,7 @@ export function BlogPostCard({ post, featured }: BlogPostCardProps) {
       href={`/blog/${post.slug}`}
       className={cn(
         'group block rounded-2xl border border-border bg-primary-medium p-6 transition-all duration-200 hover:border-border-light hover:shadow-card-hover',
-        featured && 'lg:col-span-2 md:p-8'
+        featured && 'md:p-8 lg:col-span-2'
       )}
     >
       {/* Top row: category + read time */}
@@ -62,7 +63,7 @@ export function BlogPostCard({ post, featured }: BlogPostCardProps) {
         </p>
         <span className="flex items-center gap-1 text-sm font-medium text-accent-coral transition-transform group-hover:translate-x-1">
           Read More
-          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          <ArrowRight className="size-4" aria-hidden="true" />
         </span>
       </div>
     </Link>

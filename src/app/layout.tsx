@@ -1,8 +1,11 @@
-import type { Metadata, Viewport } from 'next';
 import { Inter, Outfit } from 'next/font/google';
 
-import { SITE_CONFIG } from '@/lib/constants';
+import type { Metadata, Viewport } from 'next';
+
 import { Header, Footer } from '@/components/layout';
+import { SITE_CONFIG } from '@/lib/constants';
+
+import { StructuredData } from './structured-data';
 
 import '@/styles/globals.css';
 
@@ -58,20 +61,11 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     title: `${SITE_CONFIG.name} - ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
-    images: [
-      {
-        url: '/og-image.png',
-        width: 1200,
-        height: 630,
-        alt: SITE_CONFIG.name,
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: `${SITE_CONFIG.name} - ${SITE_CONFIG.tagline}`,
     description: SITE_CONFIG.description,
-    images: ['/og-image.png'],
     creator: '@directrentng',
   },
   robots: {
@@ -86,9 +80,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+    apple: '/favicon.svg',
   },
   manifest: '/site.webmanifest',
 };
@@ -115,6 +108,8 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="flex min-h-screen flex-col bg-primary-dark font-sans text-text-primary antialiased">
+        <StructuredData />
+
         {/* Skip to main content link */}
         <a href="#main-content" className="skip-link">
           Skip to main content

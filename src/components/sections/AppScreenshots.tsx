@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef, useState, useCallback } from 'react';
+
 import Image from 'next/image';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';
@@ -9,22 +11,22 @@ import { cn } from '@/lib/utils';
 
 const showcaseImages = [
   {
-    src: '/images/minimalist-apartment-grey.png',
+    src: '/images/minimalist-apartment-grey.webp',
     alt: 'Modern minimalist apartment interior available on Directrent',
     label: 'Verified Listings',
   },
   {
-    src: '/images/minimalist-apartment-luxury-grey.png',
+    src: '/images/minimalist-apartment-luxury-grey.webp',
     alt: 'Luxury grey-toned apartment interior listed on Directrent Lagos',
     label: 'Premium Spaces',
   },
   {
-    src: '/images/minimalist-luxury-apartment-maroon.png',
+    src: '/images/minimalist-luxury-apartment-maroon.webp',
     alt: 'Luxury maroon-accented apartment available through Directrent',
     label: 'Quality Homes',
   },
   {
-    src: '/images/young-man-new-home-2.png',
+    src: '/images/young-man-new-home-2.webp',
     alt: 'Young professional settling into a new home found on Directrent',
     label: 'Happy Tenants',
   },
@@ -98,7 +100,7 @@ export function AppScreenshots() {
         {/* Mobile: horizontal carousel */}
         <div className="sm:hidden">
           <motion.div
-            className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4 scrollbar-hide"
+            className="scrollbar-hide flex snap-x snap-mandatory gap-3 overflow-x-auto pb-4"
             initial={prefersReducedMotion ? false : { opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.4 }}
@@ -107,7 +109,7 @@ export function AppScreenshots() {
             {showcaseImages.map((image) => (
               <div
                 key={image.label}
-                className="relative w-[75vw] shrink-0 snap-center overflow-hidden rounded-2xl aspect-[3/4]"
+                className="relative aspect-[3/4] w-[75vw] shrink-0 snap-center overflow-hidden rounded-2xl"
               >
                 <Image
                   src={image.src}
@@ -118,7 +120,7 @@ export function AppScreenshots() {
                   quality={80}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent opacity-60" />
-                <div className="absolute bottom-4 left-4 right-4">
+                <div className="absolute inset-x-4 bottom-4">
                   <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm">
                     {image.label}
                   </span>
@@ -132,7 +134,7 @@ export function AppScreenshots() {
               <div
                 key={img.label}
                 className={cn(
-                  'h-1.5 w-1.5 rounded-full transition-colors',
+                  'size-1.5 rounded-full transition-colors',
                   i === activeIndex ? 'bg-accent-coral' : 'bg-text-muted'
                 )}
               />
@@ -166,7 +168,7 @@ export function AppScreenshots() {
                 quality={80}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/70 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-90" />
-              <div className="absolute bottom-4 left-4 right-4">
+              <div className="absolute inset-x-4 bottom-4">
                 <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-white backdrop-blur-sm">
                   {image.label}
                 </span>

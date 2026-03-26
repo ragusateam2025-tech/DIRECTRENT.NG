@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+
 import { useInView, useReducedMotion } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
@@ -26,7 +27,7 @@ function AnimatedCounter({
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView) { return; }
 
     if (prefersReducedMotion) {
       setCount(target);

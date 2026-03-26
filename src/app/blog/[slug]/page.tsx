@@ -1,7 +1,8 @@
-import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import { notFound } from 'next/navigation';
+
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import type { Metadata } from 'next';
 
 import { Container } from '@/components/layout';
 import { Button } from '@/components/ui/Button';
@@ -27,7 +28,7 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const post = getPostBySlug(params.slug);
-  if (!post) return { title: 'Post Not Found' };
+  if (!post) { return { title: 'Post Not Found' }; }
 
   return {
     title: `${post.title} — Directrent.ng Blog`,
@@ -62,7 +63,7 @@ export default function BlogPostPage({
           href="/blog"
           className="mb-8 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-text-primary"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <ArrowLeft className="size-4" />
           Back to Blog
         </Link>
 
@@ -97,7 +98,7 @@ export default function BlogPostPage({
 
         {/* Article body */}
         <div
-          className="prose prose-invert prose-lg max-w-none prose-headings:font-display prose-headings:text-text-primary prose-headings:font-bold prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4 prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-4 prose-strong:text-text-primary prose-strong:font-semibold prose-a:text-accent-coral prose-a:no-underline hover:prose-a:underline"
+          className="prose prose-lg prose-invert max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-text-primary prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-p:mb-4 prose-p:leading-relaxed prose-p:text-text-secondary prose-a:text-accent-coral prose-a:no-underline hover:prose-a:underline prose-strong:font-semibold prose-strong:text-text-primary"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
 
@@ -107,14 +108,14 @@ export default function BlogPostPage({
         <div className="flex flex-col gap-4 sm:flex-row">
           <Button asChild variant="ghost" size="md">
             <Link href="/blog">
-              <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true" />
+              <ArrowLeft className="mr-2 size-4" aria-hidden="true" />
               Back to Blog
             </Link>
           </Button>
           <Button asChild size="md">
             <Link href="/waitlist">
               Join the Waitlist
-              <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+              <ArrowRight className="ml-2 size-5" aria-hidden="true" />
             </Link>
           </Button>
         </div>

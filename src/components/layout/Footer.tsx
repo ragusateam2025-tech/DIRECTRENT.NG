@@ -1,7 +1,9 @@
 import Link from 'next/link';
+
 import { Mail, MapPin, Phone, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 import { SITE_CONFIG, SOCIAL_LINKS, FOOTER_LINKS } from '@/lib/constants';
+
 import { Container } from './Container';
 
 export function Footer() {
@@ -33,7 +35,7 @@ export function Footer() {
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/10 text-text-secondary transition-colors hover:bg-accent-coral hover:text-white"
                 aria-label="Follow us on Twitter"
               >
-                <Twitter className="h-5 w-5" />
+                <Twitter className="size-5" />
               </a>
               <a
                 href={SOCIAL_LINKS.instagram}
@@ -42,7 +44,7 @@ export function Footer() {
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/10 text-text-secondary transition-colors hover:bg-accent-coral hover:text-white"
                 aria-label="Follow us on Instagram"
               >
-                <Instagram className="h-5 w-5" />
+                <Instagram className="size-5" />
               </a>
               <a
                 href={SOCIAL_LINKS.linkedin}
@@ -51,7 +53,7 @@ export function Footer() {
                 className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full bg-white/10 text-text-secondary transition-colors hover:bg-accent-coral hover:text-white"
                 aria-label="Follow us on LinkedIn"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="size-5" />
               </a>
             </div>
           </div>
@@ -105,19 +107,19 @@ export function Footer() {
                   href={`mailto:${SITE_CONFIG.email}`}
                   className="inline-flex min-h-[44px] items-center gap-2 text-sm text-text-secondary transition-colors hover:text-accent-coral"
                 >
-                  <Mail className="h-4 w-4 shrink-0" />
+                  <Mail className="size-4 shrink-0" />
                   {SITE_CONFIG.email}
                 </a>
               </li>
               <li>
                 <span className="inline-flex min-h-[44px] items-center gap-2 text-sm text-text-secondary">
-                  <Phone className="h-4 w-4 shrink-0" />
+                  <Phone className="size-4 shrink-0" />
                   {SITE_CONFIG.phone}
                 </span>
               </li>
               <li>
                 <span className="inline-flex min-h-[44px] items-center gap-2 text-sm text-text-secondary">
-                  <MapPin className="h-4 w-4 shrink-0" />
+                  <MapPin className="size-4 shrink-0" />
                   {SITE_CONFIG.location}
                 </span>
               </li>

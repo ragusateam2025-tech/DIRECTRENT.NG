@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef, useState } from 'react';
+
 import Link from 'next/link';
+
 import { motion, AnimatePresence, useInView, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -72,7 +74,7 @@ export function SavingsCalculator() {
             Annual Rent
           </label>
           <div className="flex items-center gap-0 rounded-lg border border-border bg-primary-dark focus-within:border-accent-coral focus-within:ring-2 focus-within:ring-accent-coral focus-within:ring-offset-2 focus-within:ring-offset-primary-medium">
-            <span className="shrink-0 pl-4 text-xl font-display font-bold text-text-muted">
+            <span className="shrink-0 pl-4 font-display text-xl font-bold text-text-muted">
               ₦
             </span>
             <input
@@ -82,7 +84,7 @@ export function SavingsCalculator() {
               value={displayValue}
               onChange={handleChange}
               placeholder="e.g. 1,200,000"
-              className="min-h-[48px] w-full bg-transparent px-3 py-3 text-right text-xl font-display font-bold text-text-primary placeholder:text-text-muted focus:outline-none"
+              className="min-h-[48px] w-full bg-transparent p-3 text-right font-display text-xl font-bold text-text-primary placeholder:text-text-muted focus:outline-none"
             />
           </div>
 
@@ -130,7 +132,7 @@ export function SavingsCalculator() {
                   <Button asChild size="lg">
                     <Link href="/waitlist">
                       Join the Waitlist
-                      <ArrowRight className="ml-2 h-5 w-5" aria-hidden="true" />
+                      <ArrowRight className="ml-2 size-5" aria-hidden="true" />
                     </Link>
                   </Button>
                 </div>

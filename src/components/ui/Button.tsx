@@ -1,6 +1,7 @@
 'use client';
 
 import * as React from 'react';
+
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Loader2 } from 'lucide-react';
@@ -41,7 +42,7 @@ const buttonVariants = cva(
         // Link button
         link: [
           'bg-transparent text-accent-coral underline-offset-4',
-          'hover:underline hover:text-accent-coral-light',
+          'hover:text-accent-coral-light hover:underline',
         ],
         // Destructive button
         destructive: [
@@ -120,7 +121,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         {loading ? (
           <>
-            <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />
+            <Loader2 className="size-4 animate-spin" aria-hidden="true" />
             <span>Loading...</span>
           </>
         ) : (

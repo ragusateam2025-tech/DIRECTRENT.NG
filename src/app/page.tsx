@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-import { DownloadHero } from '@/components/sections/DownloadHero';
 import { AppFeatures } from '@/components/sections/AppFeatures';
-import { SocialProof } from '@/components/sections/SocialProof';
 import { DownloadCTA } from '@/components/sections/DownloadCTA';
+import { DownloadHero } from '@/components/sections/DownloadHero';
+import { SocialProof } from '@/components/sections/SocialProof';
 
 export const metadata: Metadata = {
   title: 'Directrent.ng — Rent Direct. Save More.',
@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     'iOS',
     'Android',
   ],
+  alternates: {
+    canonical: 'https://directrent.ng',
+  },
   openGraph: {
     title: 'Directrent.ng — Rent Direct. Save More.',
     description:

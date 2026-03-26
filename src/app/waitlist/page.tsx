@@ -1,18 +1,20 @@
 'use client';
 
 import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+
 import Link from 'next/link';
+
+import { zodResolver } from '@hookform/resolvers/zod';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowLeft, CheckCircle, AlertCircle } from 'lucide-react';
+import { useForm } from 'react-hook-form';
 
 import { Container } from '@/components/layout';
-import { Input } from '@/components/ui/Input';
 import { Button } from '@/components/ui/Button';
-import { waitlistSchema, type WaitlistFormData } from '@/lib/validations';
+import { Input } from '@/components/ui/Input';
 import { LAUNCH_AREAS, COMING_SOON_AREAS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { waitlistSchema, type WaitlistFormData } from '@/lib/validations';
 
 const REFERRAL_SOURCES = [
   'Social Media',
@@ -51,7 +53,7 @@ export default function WaitlistPage() {
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) throw new Error('Failed');
+      if (!response.ok) { throw new Error('Failed'); }
 
       setSubmitState('success');
       reset();
@@ -68,7 +70,7 @@ export default function WaitlistPage() {
           href="/"
           className="mb-8 inline-flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-text-primary"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <ArrowLeft className="size-4" />
           Back to Home
         </Link>
 
@@ -82,9 +84,9 @@ export default function WaitlistPage() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success/10">
+              <div className="mb-4 flex size-16 items-center justify-center rounded-full bg-success/10">
                 <CheckCircle
-                  className="h-8 w-8 text-success"
+                  className="size-8 text-success"
                   aria-hidden="true"
                 />
               </div>
@@ -109,15 +111,15 @@ export default function WaitlistPage() {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-sm text-text-secondary">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-accent-gold" />
+                    <CheckCircle className="size-5 shrink-0 text-accent-gold" />
                     <span>Early access when we launch in your area</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm text-text-secondary">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-accent-gold" />
+                    <CheckCircle className="size-5 shrink-0 text-accent-gold" />
                     <span>Exclusive founding member benefits</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm text-text-secondary">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-accent-gold" />
+                    <CheckCircle className="size-5 shrink-0 text-accent-gold" />
                     <span>Updates on our progress</span>
                   </li>
                 </ul>
@@ -281,7 +283,7 @@ export default function WaitlistPage() {
                 {submitState === 'error' && (
                   <div className="flex items-center gap-3 rounded-lg border border-error/20 bg-error/10 p-4">
                     <AlertCircle
-                      className="h-5 w-5 shrink-0 text-error"
+                      className="size-5 shrink-0 text-error"
                       aria-hidden="true"
                     />
                     <p className="text-sm text-error">
@@ -316,15 +318,15 @@ export default function WaitlistPage() {
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-center gap-3 text-sm text-text-secondary">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-accent-gold" />
+                    <CheckCircle className="size-5 shrink-0 text-accent-gold" />
                     <span>Early access when we launch in your area</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm text-text-secondary">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-accent-gold" />
+                    <CheckCircle className="size-5 shrink-0 text-accent-gold" />
                     <span>Exclusive founding member benefits</span>
                   </li>
                   <li className="flex items-center gap-3 text-sm text-text-secondary">
-                    <CheckCircle className="h-5 w-5 shrink-0 text-accent-gold" />
+                    <CheckCircle className="size-5 shrink-0 text-accent-gold" />
                     <span>Updates on our progress</span>
                   </li>
                 </ul>

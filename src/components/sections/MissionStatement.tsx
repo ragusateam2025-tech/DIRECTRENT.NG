@@ -1,7 +1,9 @@
 'use client';
 
 import { useRef } from 'react';
+
 import Image from 'next/image';
+
 import { motion, useInView, useReducedMotion } from 'framer-motion';
 
 import { Container } from '@/components/layout';
@@ -42,7 +44,7 @@ export function MissionStatement() {
       {/* Background apartment image */}
       <div className="pointer-events-none absolute inset-0 -z-20">
         <Image
-          src="/images/minimalist-apartment-luxury-grey.png"
+          src="/images/minimalist-apartment-luxury-grey.webp"
           alt="Luxury apartment interior representing Lagos housing aspirations"
           fill
           className="object-cover opacity-10"

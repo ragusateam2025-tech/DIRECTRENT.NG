@@ -1,8 +1,24 @@
 import { NextResponse } from 'next/server';
+
+import { checkRateLimit } from '@/lib/rate-limit';
+import { sanitizeObject } from '@/lib/sanitize';
 import { waitlistSchema } from '@/lib/validations';
 
 export async function POST(request: Request) {
   try {
+    const ip =
+      request.headers.get('x-forwarded-for') ??
+      request.headers.get('x-real-ip') ??
+      'unknown';
+    const { allowed } = checkRateLimit(ip, 5, 60000);
+
+    if (!allowed) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': '60' } }
+      );
+    }
+
     const body = await request.json();
 
     // Validate input
@@ -17,7 +33,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const data = result.data;
+    const data = sanitizeObject(result.data);
 
     // ================================================
     // TODO: INTEGRATION POINTS
