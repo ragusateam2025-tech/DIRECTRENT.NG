@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { ArrowRight } from 'lucide-react';
@@ -28,6 +29,20 @@ export function BlogPostCard({ post, featured }: BlogPostCardProps) {
         featured && 'md:p-8 lg:col-span-2'
       )}
     >
+      {post.coverImage && (
+        <div className="relative mb-4 aspect-[16/9] overflow-hidden rounded-xl">
+          <Image
+            src={post.coverImage}
+            alt=""
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            quality={80}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 to-transparent" />
+        </div>
+      )}
+
       {/* Top row: category + read time */}
       <div className="mb-4 flex items-center justify-between">
         <span

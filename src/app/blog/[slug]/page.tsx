@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -94,7 +95,18 @@ export default function BlogPostPage({
           <p className="mt-4 text-sm text-text-muted">By {post.author}</p>
         </div>
 
-        <hr className="mb-8 border-border" />
+        {post.coverImage && (
+          <div className="relative my-8 aspect-[21/9] overflow-hidden rounded-2xl">
+            <Image
+              src={post.coverImage}
+              alt=""
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 65vw"
+              quality={85}
+            />
+          </div>
+        )}
 
         {/* Article body */}
         <div

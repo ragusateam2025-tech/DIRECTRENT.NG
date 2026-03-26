@@ -77,8 +77,8 @@ export function FounderNote() {
             className="mt-4 text-base leading-relaxed text-text-secondary sm:text-lg"
             variants={iVariants}
           >
-            That experience became the foundation of my MBA capstone research at
-            Rome Business School, where I studied 70 participants across Lagos
+            That experience sparked a deep dive into the Lagos rental market, where
+            I studied 70 participants across Lagos
             to quantify what I call the &ldquo;Agent Effect&rdquo; — the
             measurable financial and psychological burden of the mandatory
             middleman system.

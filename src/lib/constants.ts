@@ -229,7 +229,7 @@ export const TESTIMONIALS = [
     role: 'Tenant',
     location: 'Yaba',
     quote:
-      'Saved over ₦200,000 in agency fees. The direct connection with my landlord made everything smoother.',
+      'Saved over ₦300,000 in rental fees. The direct connection with my landlord changed everything.',
     rating: 5,
   },
   {

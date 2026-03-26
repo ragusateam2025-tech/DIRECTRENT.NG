@@ -22,7 +22,7 @@ const testimonials = [
     name: 'Tayo A.',
     role: 'Tenant, Yaba',
     quote:
-      'Saved over ₦200,000 in agency fees. The direct landlord connection changed everything.',
+      'Saved over ₦300,000 in agency fees. The direct landlord connection changed everything.',
   },
   {
     name: 'Chidi N.',

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'About — Directrent.ng',
   description:
-    'Learn about the story behind Directrent.ng — born from MBA research into Lagos\'s broken rental market. We\'re eliminating the mandatory middleman and saving renters an average of ₦300,000.',
+    'Learn about Directrent.ng — built to eliminate the mandatory middleman in Lagos\'s rental market. We\'re saving renters an average of ₦300,000.',
   alternates: {
     canonical: 'https://directrent.ng/about',
   },

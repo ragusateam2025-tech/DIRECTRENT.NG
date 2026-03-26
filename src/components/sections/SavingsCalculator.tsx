@@ -67,25 +67,29 @@ export function SavingsCalculator() {
           transition={{ duration: 0.5, delay: prefersReducedMotion ? 0 : 0.15 }}
         >
           {/* Input */}
-          <label
-            htmlFor="annual-rent"
-            className="mb-2 block text-sm font-medium text-text-secondary"
-          >
-            Annual Rent
-          </label>
-          <div className="flex items-center gap-0 rounded-lg border border-border bg-primary-dark focus-within:border-accent-coral focus-within:ring-2 focus-within:ring-accent-coral/50">
-            <span className="shrink-0 pl-5 font-display text-xl font-bold text-text-muted">
-              ₦
-            </span>
-            <input
-              id="annual-rent"
-              type="text"
-              inputMode="numeric"
-              value={displayValue}
-              onChange={handleChange}
-              placeholder="e.g. 1,200,000"
-              className="min-h-[48px] w-full bg-transparent p-3 text-right font-display text-xl font-bold text-text-primary placeholder:text-text-muted focus:outline-none"
-            />
+          <div>
+            <label
+              htmlFor="annual-rent"
+              className="mb-2 block text-sm font-medium text-text-primary"
+            >
+              Annual Rent
+            </label>
+            <div className="flex items-stretch overflow-hidden rounded-lg border border-border bg-primary-dark transition-colors duration-200 focus-within:border-accent-coral focus-within:ring-2 focus-within:ring-accent-coral/30">
+              {/* Prefix — sits OUTSIDE the input, shares the visual container */}
+              <span className="flex select-none items-center bg-primary-medium px-4 text-lg font-semibold text-text-muted">
+                ₦
+              </span>
+              {/* Input — no border, no ring, no padding-left for prefix */}
+              <input
+                id="annual-rent"
+                type="text"
+                inputMode="numeric"
+                placeholder="e.g. 1,200,000"
+                className="min-h-[48px] w-full bg-transparent px-4 py-3 text-right font-display text-xl font-bold text-text-primary placeholder:text-base placeholder:font-normal placeholder:text-text-muted focus:outline-none"
+                value={displayValue}
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
           {/* Results */}

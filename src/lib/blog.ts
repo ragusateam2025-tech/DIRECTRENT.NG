@@ -25,12 +25,12 @@ export const blogPosts: BlogPost[] = [
     title:
       'Introducing Directrent.ng: Ending the Mandatory Middleman in Lagos',
     excerpt:
-      'Born from MBA research at Rome Business School, Directrent.ng is building a direct rental marketplace that saves Lagos tenants an average of ₦300,000 in unnecessary fees.',
+      'Directrent.ng is building a direct rental marketplace that saves Lagos tenants an average of ₦300,000 in unnecessary fees.',
     content: `
       <p>Every Lagos renter knows the story. You find an apartment you love, and then the fees start piling up — agency commission, legal fees, caution fees, agreement fees, inspection fees. Before you've spent a single night in your new home, you've handed over hundreds of thousands of naira to middlemen who add no real value to the transaction.</p>
       <p>That experience — multiplied across millions of Lagos renters — is the problem Directrent.ng was built to solve.</p>
       <h2>The Research Behind the Platform</h2>
-      <p>Directrent.ng isn't just another app. It's the product of rigorous academic research conducted as part of an MBA capstone at Rome Business School. We surveyed 70 participants — 50 tenants and 20 landlords — across five Lagos neighborhoods to quantify what we call the "Agent Effect."</p>
+      <p>Directrent.ng isn't just another app. It's the product of rigorous research into the Lagos rental market. We surveyed 70 participants — 50 tenants and 20 landlords — across five Lagos neighborhoods to quantify what we call the "Agent Effect."</p>
       <p>The findings were striking: tenants pay an average of 32% of their annual rent in non-housing fees. Agent-managed properties sit vacant for 63 days on average, versus just 25 days for direct listings. And 100% of surveyed landlords and tenants expressed willingness to switch to a direct platform.</p>
       <h2>What We're Building</h2>
       <p>Directrent.ng connects landlords and tenants directly through a verified marketplace. Every user is verified via BVN/NIN. Payments are secured through Paystack escrow. Lease agreements are digital and legally compliant with Lagos State Tenancy Law.</p>
@@ -42,6 +42,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Ololade',
     publishedAt: '2026-03-20T00:00:00Z',
     readingTime: '4 min read',
+    coverImage: '/images/couples-moving.webp',
     featured: true,
   },
   {
@@ -68,6 +69,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Ololade',
     publishedAt: '2026-03-18T00:00:00Z',
     readingTime: '6 min read',
+    coverImage: '/images/minimalist-apartment-luxury-grey.webp',
     featured: true,
   },
   {
@@ -91,6 +93,7 @@ export const blogPosts: BlogPost[] = [
     author: 'Directrent.ng Team',
     publishedAt: '2026-03-15T00:00:00Z',
     readingTime: '5 min read',
+    coverImage: '/images/ai-ambassador.webp',
     featured: false,
   },
 ];

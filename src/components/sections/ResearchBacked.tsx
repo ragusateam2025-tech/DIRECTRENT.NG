@@ -9,7 +9,7 @@ import { Container } from '@/components/layout';
 import { cn } from '@/lib/utils';
 
 const CITATION =
-  'Olaniran, O. (2025). Eliminating the Mandatory Middleman: A Digital Platform Approach to Direct Landlord-Tenant Connections in Lagos, Nigeria. MBA Capstone, Rome Business School.';
+  'Olaniran, O. (2025). Eliminating the Mandatory Middleman: A Digital Platform Approach to Direct Landlord-Tenant Connections in Lagos, Nigeria. Research Publication.';
 
 interface Metric {
   label: string;
@@ -201,8 +201,7 @@ export function ResearchBacked() {
         >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <p className="text-xs leading-relaxed text-text-muted">
-              Research conducted as part of MBA Capstone, Rome Business School,
-              2025. N=70 (50 tenants, 20 landlords).
+              Primary research conducted in Lagos, 2025. N=70 (50 tenants, 20 landlords).
             </p>
             <button
               onClick={handleCopyCitation}
