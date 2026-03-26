@@ -73,8 +73,8 @@ export function SavingsCalculator() {
           >
             Annual Rent
           </label>
-          <div className="flex items-center gap-0 rounded-lg border border-border bg-primary-dark focus-within:border-accent-coral focus-within:ring-2 focus-within:ring-accent-coral focus-within:ring-offset-2 focus-within:ring-offset-primary-medium">
-            <span className="shrink-0 pl-4 font-display text-xl font-bold text-text-muted">
+          <div className="flex items-center gap-0 rounded-lg border border-border bg-primary-dark focus-within:border-accent-coral focus-within:ring-2 focus-within:ring-accent-coral/50">
+            <span className="shrink-0 pl-5 font-display text-xl font-bold text-text-muted">
               ₦
             </span>
             <input

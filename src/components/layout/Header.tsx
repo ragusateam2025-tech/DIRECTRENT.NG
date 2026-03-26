@@ -8,7 +8,8 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
-import { NAV_LINKS, SITE_CONFIG } from '@/lib/constants';
+import { Logo } from '@/components/ui/Logo';
+import { NAV_LINKS } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 
 import { Container } from './Container';
@@ -59,9 +60,9 @@ export function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2 text-xl font-bold text-text-primary transition-colors hover:text-accent-gold"
+            className="flex items-center transition-opacity hover:opacity-90"
           >
-            <span className="font-display text-2xl">{SITE_CONFIG.name}</span>
+            <Logo size="md" />
           </Link>
 
           {/* Desktop Navigation */}

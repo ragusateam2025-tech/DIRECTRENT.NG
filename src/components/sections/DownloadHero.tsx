@@ -112,19 +112,19 @@ export function DownloadHero() {
 
       <Container size="xl" className="relative flex min-h-[calc(100vh-5rem)] items-center lg:min-h-svh">
         <motion.div
-          className="grid w-full items-center gap-8 py-24 lg:grid-cols-2 lg:gap-16 lg:py-32"
+          className="flex w-full flex-col items-center gap-8 py-24 lg:py-32"
           variants={variants}
           initial="hidden"
           animate="visible"
         >
           {/* Text content — left side */}
-          <div className="text-center lg:text-left">
+          <div className="max-w-3xl text-center">
             <motion.div
-              className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent-gold/30 bg-accent-gold/10 px-4 py-1.5"
+              className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent-gold/50 bg-primary-dark/80 px-4 py-2 backdrop-blur-sm"
               variants={childVariants}
             >
               <span className="size-2 animate-pulse-gold rounded-full bg-accent-gold" />
-              <span className="text-sm font-medium text-accent-gold">
+              <span className="text-sm font-semibold text-accent-gold">
                 Now in Yaba & Surulere
               </span>
             </motion.div>
@@ -138,7 +138,7 @@ export function DownloadHero() {
             </motion.h1>
 
             <motion.p
-              className="mx-auto mt-6 max-w-xl text-lg text-text-secondary md:text-xl lg:mx-0"
+              className="mx-auto mt-6 max-w-xl text-lg text-text-secondary md:text-xl"
               variants={childVariants}
             >
               Skip the agents. Save up to ₦300,000 in rental fees. Connect directly with
@@ -148,78 +148,40 @@ export function DownloadHero() {
 
             {/* Store buttons */}
             <motion.div
-              className="mt-8 flex flex-row flex-wrap items-center justify-center gap-3 lg:justify-start"
+              className="mt-8 flex flex-row flex-wrap items-center justify-center gap-3"
               variants={childVariants}
             >
-              {platform === 'ios' ? (
-                <>
-                  <StoreButton store="apple" href={APPLE_STORE_URL} variant="primary" size="lg" />
-                  <StoreButton store="google" href={GOOGLE_PLAY_URL} variant="secondary" size="md" />
-                </>
-              ) : platform === 'android' ? (
-                <>
-                  <StoreButton store="google" href={GOOGLE_PLAY_URL} variant="primary" size="lg" />
-                  <StoreButton store="apple" href={APPLE_STORE_URL} variant="secondary" size="md" />
-                </>
-              ) : (
-                <>
-                  <StoreButton store="apple" href={APPLE_STORE_URL} variant="primary" size="lg" />
-                  <StoreButton store="google" href={GOOGLE_PLAY_URL} variant="primary" size="lg" />
-                </>
-              )}
+              <StoreButton store="apple" href={APPLE_STORE_URL} variant="primary" size="lg" />
+              <StoreButton store="google" href={GOOGLE_PLAY_URL} variant="primary" size="lg" />
             </motion.div>
 
             {/* QR Code - desktop only */}
             {platform === 'desktop' && (
-              <motion.div className="mt-8 hidden lg:block" variants={childVariants}>
+              <motion.div className="mt-8 hidden lg:flex lg:justify-center" variants={childVariants}>
                 <QRCode url={QR_CODE_URL} size={140} />
               </motion.div>
             )}
 
             {/* Trust indicators */}
             <motion.div
-              className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-text-muted lg:justify-start"
+              className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm text-text-secondary"
               variants={childVariants}
             >
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1 backdrop-blur-sm">
                 <span className="inline-block size-2 rounded-full bg-success" />
                 Free to download
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1 backdrop-blur-sm">
                 <span className="inline-block size-2 rounded-full bg-success" />
                 BVN/NIN verified
               </span>
-              <span className="flex items-center gap-1.5">
+              <span className="flex items-center gap-1.5 rounded-full bg-white/5 px-3 py-1 backdrop-blur-sm">
                 <span className="inline-block size-2 rounded-full bg-success" />
                 Paystack secured
               </span>
             </motion.div>
           </div>
 
-          {/* Right side — secondary image card (desktop only) */}
-          <motion.div
-            className="hidden lg:flex lg:justify-end"
-            variants={childVariants}
-          >
-            <div className="relative h-[500px] w-[400px] overflow-hidden rounded-3xl border border-white/10 shadow-card">
-              <Image
-                src="/images/young-man-new-home-1.webp"
-                alt="Young man happily settling into his new Lagos apartment"
-                fill
-                className="object-cover object-top"
-                sizes="400px"
-                quality={80}
-              />
-              {/* Subtle overlay on the card */}
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent" />
-              <div className="absolute inset-x-6 bottom-6">
-                <p className="text-sm font-medium text-white/90">
-                  &ldquo;Saved ₦200,000+ in agency fees&rdquo;
-                </p>
-                <p className="mt-1 text-xs text-white/60">— Tayo A., Yaba</p>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </Container>
     </section>

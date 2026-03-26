@@ -20,7 +20,7 @@ export const SITE_CONFIG = {
 // SOCIAL LINKS
 // ================================================
 export const SOCIAL_LINKS = {
-  twitter: 'https://twitter.com/directrentng',
+  twitter: 'https://x.com/directrentng',
   instagram: 'https://instagram.com/directrentng',
   linkedin: 'https://linkedin.com/company/directrentng',
   facebook: 'https://facebook.com/directrentng',

@@ -10,3 +10,4 @@ export {
   CardFooter,
   type CardProps,
 } from './Card';
+export { Logo } from './Logo';

@@ -37,11 +37,11 @@ export function FeaturesCTA() {
             first to access every feature when we launch.
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-5">
             <Button asChild size="lg" fullWidth className="sm:w-auto">
-              <Link href="/waitlist">
-                Join as Tenant
-                <ArrowRight className="ml-2 size-5" aria-hidden="true" />
+              <Link href="/waitlist" className="inline-flex items-center gap-2">
+                <span>Join as Tenant</span>
+                <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
               </Link>
             </Button>
             <Button asChild variant="outline" size="lg" fullWidth className="sm:w-auto">

@@ -60,30 +60,12 @@ export function MissionStatement() {
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
         >
-          {/* Decorative quotation mark */}
-          <motion.div
-            className="mx-auto mb-6 flex justify-center"
-            variants={iVariants}
-            aria-hidden="true"
-          >
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              className="text-accent-gold/40"
-            >
-              <path
-                d="M12 24c-3.3 0-6-2.7-6-6s2.7-6 6-6c1 0 2 .3 2.8.7C16.5 10 18 6 22 4l2 3c-4 2-6 5.5-6.5 9.2.2 0 .5-.1.5-.1 3.3 0 6 2.7 6 6s-2.7 6-6 6zm18 0c-3.3 0-6-2.7-6-6s2.7-6 6-6c1 0 2 .3 2.8.7C34.5 10 36 6 40 4l2 3c-4 2-6 5.5-6.5 9.2.2 0 .5-.1.5-.1 3.3 0 6 2.7 6 6s-2.7 6-6 6z"
-                fill="currentColor"
-              />
-            </svg>
-          </motion.div>
-
           <motion.blockquote variants={iVariants}>
             <p className="font-display text-2xl font-bold italic leading-snug text-accent-gold md:text-4xl">
+              <span className="text-accent-gold/40">&ldquo;</span>
               We believe finding a home in Lagos shouldn&apos;t cost you months
               of salary in agent fees.
+              <span className="text-accent-gold/40">&rdquo;</span>
             </p>
           </motion.blockquote>
 
