@@ -8,7 +8,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
 import { NAV_LINKS, SITE_CONFIG } from '@/lib/constants';
-import { Button } from '@/components/ui/Button';
 import { Container } from './Container';
 
 export function Header() {
@@ -66,28 +65,27 @@ export function Header() {
           <div className="hidden items-center gap-1 md:flex">
             {NAV_LINKS.map((link) => {
               const isActive = pathname === link.href;
+              const isWaitlist = link.href === '/waitlist';
+
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={cn(
                     'rounded-lg px-4 py-2 text-sm font-medium transition-colors',
-                    isActive
-                      ? 'bg-white/10 text-accent-gold'
-                      : 'text-text-secondary hover:bg-white/5 hover:text-text-primary'
+                    isWaitlist
+                      ? isActive
+                        ? 'bg-accent-coral text-white'
+                        : 'bg-accent-coral/10 text-accent-coral hover:bg-accent-coral/20'
+                      : isActive
+                        ? 'bg-white/10 text-accent-gold'
+                        : 'text-text-secondary hover:bg-white/5 hover:text-text-primary'
                   )}
                 >
                   {link.label}
                 </Link>
               );
             })}
-          </div>
-
-          {/* CTA Button - Desktop */}
-          <div className="hidden items-center gap-4 md:flex">
-            <Button asChild size="md">
-              <Link href="/waitlist">Join Waitlist</Link>
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,26 +123,27 @@ export function Header() {
               <div className="flex flex-col gap-2 py-4">
                 {NAV_LINKS.map((link) => {
                   const isActive = pathname === link.href;
+                  const isWaitlist = link.href === '/waitlist';
+
                   return (
                     <Link
                       key={link.href}
                       href={link.href}
                       className={cn(
                         'rounded-lg px-4 py-3 text-base font-medium transition-colors',
-                        isActive
-                          ? 'bg-white/10 text-accent-gold'
-                          : 'text-text-secondary hover:bg-white/5 hover:text-text-primary'
+                        isWaitlist
+                          ? isActive
+                            ? 'bg-accent-coral text-white'
+                            : 'bg-accent-coral/10 text-accent-coral hover:bg-accent-coral/20'
+                          : isActive
+                            ? 'bg-white/10 text-accent-gold'
+                            : 'text-text-secondary hover:bg-white/5 hover:text-text-primary'
                       )}
                     >
                       {link.label}
                     </Link>
                   );
                 })}
-                <div className="mt-4 border-t border-border pt-4">
-                  <Button asChild fullWidth>
-                    <Link href="/waitlist">Join Waitlist</Link>
-                  </Button>
-                </div>
               </div>
             </Container>
           </motion.div>

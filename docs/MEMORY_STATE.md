@@ -1,8 +1,8 @@
 # Directrent.ng — Memory State
 
 > **Purpose:** This file serves as a continuous memory bank for tracking project state across development sessions. Read this file FIRST before starting any task.  
-> **Last Updated:** 2026-03-24T02:00:00Z
-> **Session Count:** 4
+> **Last Updated:** 2026-03-25T23:00:00Z
+> **Session Count:** 5
 
 ---
 
@@ -11,15 +11,99 @@
 | Metric | Value |
 |--------|-------|
 | **Current Phase** | Phase 0: Foundation & Website |
-| **Current Sprint** | Sprint 1.0 — Visual Polish |
-| **Overall Progress** | 45% |
+| **Current Sprint** | Sprint 2.0 — Complete Site Build |
+| **Overall Progress** | 90% |
 | **Active Blockers** | 0 |
 | **Open Bugs** | 0 |
-| **Next Priority** | How It Works image integration, Contact page |
+| **Next Priority** | Git push to GitHub, Vercel deployment, mobile QA pass |
 
 ---
 
 ## What Was Just Done (Latest Session)
+
+### Session 5 — 2026-03-25
+
+**Focus:** Complete site build — all pages, API routes, navigation, legal, blog
+
+#### Completed Tasks
+
+1. **Mobile Responsiveness Fix Pass**
+   - [x] Disabled parallax on mobile (DownloadHero)
+   - [x] Converted bento grid to icon-only on mobile (AppFeatures)
+   - [x] Converted image gallery to horizontal carousel on mobile (AppScreenshots)
+   - [x] Fixed competing sticky bottom bars (DownloadCTA / AboutCTA)
+   - [x] Fixed overflow-x clipping (globals.css / CompanyValues)
+   - [x] Tuned all animations (15+ files: margin, stagger, duration)
+   - [x] Fixed touch targets and spacing across components
+
+2. **Features Page (NEW)**
+   - [x] FeaturesHero with tenant/landlord toggle
+   - [x] FeatureShowcase — 6 detailed cards per user type with stat badges
+   - [x] SavingsCalculator — interactive, 32% vs 2% model
+   - [x] FeaturesCTA
+
+3. **Image Redistribution**
+   - [x] Homepage reduced from 9 images → 2
+   - [x] hero-remix.png → About hero background
+   - [x] young-man-new-home-1.png → Founder Note side image
+   - [x] guy-unpacking.png → How It Works hero (later replaced)
+   - [x] double-couple-2.jpg → How It Works (final image)
+   - [x] female-models.png → Features hero background
+   - [x] 3 apartment images → Features property strip
+   - [x] AppScreenshots section removed from homepage
+
+4. **Calculator & Math Overhaul**
+   - [x] Traditional fees updated from 15% → 32% across all files
+   - [x] Savings figure: ₦156K → ₦300K everywhere
+   - [x] All \u20A6 unicode escapes → literal ₦ character
+   - [x] Agent Tax calculator on About page → replaced with research stats
+   - [x] Pricing page removed from nav and footer
+
+5. **Contact Page (NEW)**
+   - [x] ContactHero + ContactForm with React Hook Form + Zod
+   - [x] Two-column layout (form + info sidebar)
+   - [x] Success/error states, API submission to /api/contact
+
+6. **Waitlist Page (REWRITTEN)**
+   - [x] Raw HTML → React Hook Form + Zod validation
+   - [x] Success state with name and position number
+   - [x] API submission to /api/waitlist
+
+7. **Blog (NEW)**
+   - [x] File-based blog engine (lib/blog.ts)
+   - [x] 3 seed articles with full HTML content
+   - [x] Blog listing with category filter tabs
+   - [x] Individual post pages with styled prose
+   - [x] Newsletter signup with /api/newsletter
+
+8. **FAQ Page (NEW)**
+   - [x] 23 questions across 5 categories
+   - [x] Category filter tabs
+   - [x] Accordion with animations
+
+9. **Legal Pages (NEW)**
+   - [x] Privacy Policy (NDPR compliant, 11 sections)
+   - [x] Terms of Service (LASRERA/Tenancy Law, 16 sections)
+   - [x] Cookie Policy (7 sections)
+
+10. **API Routes (NEW)**
+    - [x] POST /api/waitlist — validates, logs, returns 201
+    - [x] POST /api/contact — validates, logs, returns 201
+    - [x] POST /api/newsletter — validates, logs, returns 201
+    - [x] All have TODO integration points for Resend, Mailchimp, Firebase
+
+11. **Navigation Restructured**
+    - [x] Order: How It Works → Features → Blog → Join Waitlist → About → Contact
+    - [x] Join Waitlist merged into nav with coral accent styling
+    - [x] Separate CTA button removed from header
+    - [x] Mobile menu updated to match
+
+12. **About Page Cleanup**
+    - [x] Roadmap: removed Research Phase / MBA reference
+    - [x] Agent Tax calculator → replaced with "The Agent Effect" research stats card
+    - [x] Founder Note enhanced with side image
+
+---
 
 ### Session 4 — 2026-03-24
 
@@ -170,43 +254,41 @@
 *None currently*
 
 ### Pending Tasks (Immediate)
-1. **How It Works — Image Integration** — Add lifestyle images to ProcessSteps/HowItWorksHero
-2. **Contact Page** — Not yet created
-3. **Features Page** — Not yet created (features shown on homepage bento grid)
-4. **FAQ Page** — Not yet created (FAQAccordion component exists)
-5. **Pricing Page** — Not yet created
+*All major pages and features complete.*
 
 ### Technical Debt
-1. Waitlist form not connected to backend API
-2. Contact form not created
-3. Newsletter signup not implemented
-4. Analytics not configured
-5. Error tracking (Sentry) not set up
+1. API routes log to console only — need Resend, Mailchimp, Firebase integration
+2. Analytics not configured (Google Analytics)
+3. Error tracking (Sentry) not set up
+4. Rate limiting not implemented (Upstash Redis)
+5. OG image, favicon, sitemap.xml, robots.txt not created
 
 ---
 
 ## Immediate Next Steps
 
-### Priority 1: How It Works Image Integration
-Add lifestyle images to the How It Works page sections (ProcessSteps, HowItWorksHero) for visual storytelling.
+### Priority 1: Deploy
+1. Push to GitHub repository
+2. Connect to Vercel
+3. Configure custom domain (directrent.ng)
+4. Set environment variables
 
-### Priority 2: Complete Remaining Marketing Pages
-1. `/contact` - Contact form with validation
-2. `/features` - Dedicated features page (homepage bento grid already covers this)
-3. `/faq` - FAQ page (FAQAccordion component ready)
-4. `/pricing` - Pricing/comparison page
+### Priority 2: Mobile QA Pass
+1. Test all pages on real devices via ipconfig preview
+2. Fix any remaining mobile layout issues
+3. Test all forms submit correctly
 
-### Priority 3: API Routes
-- POST /api/waitlist
-- POST /api/contact
-- POST /api/newsletter
-- GET /api/health
+### Priority 3: Third-Party Integrations
+1. Resend — email delivery for contact form and waitlist confirmation
+2. Mailchimp — newsletter subscription
+3. Google Analytics — traffic tracking
+4. Upstash Redis — API rate limiting
 
-### Priority 4: Third-Party Integrations
-- Resend for email
-- Mailchimp for newsletter
-- Google Analytics
-- Sentry for errors
+### Priority 4: Content & Polish
+1. Add more blog articles
+2. Create OG image (og-image.png) for social sharing
+3. Add favicon and apple-touch-icon
+4. Create sitemap.xml and robots.txt
 
 ---
 
@@ -288,17 +370,18 @@ Add lifestyle images to the How It Works page sections (ProcessSteps, HowItWorks
 | 2 | 2026-03-24 | ~2 hrs | How It Works + About pages | 15 section components built |
 | 3 | 2026-03-24 | ~1 hr | Mobile responsiveness overhaul | 13+ files updated for mobile |
 | 4 | 2026-03-24 | ~1 hr | Visual redesign with lifestyle images | Hero, bento grid, gallery, trust section |
+| 5 | 2026-03-25 | ~6 hrs | Complete site build | All pages, API routes, legal, blog, nav, mobile fixes |
 
 ---
 
 ## Notes for Next Session
 
 1. **Read this file first** to understand current state
-2. **Visual redesign is complete** — hero, features bento grid, image gallery, trust section all use lifestyle images
-3. **All images use next/image** with fill, object-cover, proper alt tags, quality settings, and responsive sizes
-4. **How It Works page** still needs image integration (young-man-new-home-2.png for tenant journey)
-5. **Contact, Features, FAQ, Pricing pages** still need to be built
-6. **API routes** (waitlist, contact, newsletter) not yet connected
+2. **All pages are built** — Homepage, How It Works, Features, About, Contact, Waitlist, Blog, FAQ, Legal (Privacy, Terms, Cookies)
+3. **All API routes exist** — /api/waitlist, /api/contact, /api/newsletter (log to console, need third-party integration)
+4. **Navigation restructured** — Join Waitlist merged into nav with coral accent, no separate CTA button
+5. **Image redistribution complete** — double-couple-2.jpg on How It Works, hero-remix.png on About, female-models.png on Features
+6. **Next step is deployment** — push to GitHub, connect Vercel, configure domain
 
 ---
 

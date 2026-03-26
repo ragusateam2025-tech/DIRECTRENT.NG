@@ -203,14 +203,14 @@ export function ProcessSteps({ activeView }: ProcessStepsProps) {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.35, delay: 0.3 }}
         >
-          <div className="relative aspect-[3/4] sm:aspect-[4/3] lg:aspect-[21/9]">
+          <div className="relative aspect-[19/6] sm:aspect-[16/7] lg:aspect-[21/9]">
             <Image
-              src="/images/young-man-new-home-2.png"
-              alt="Young professional settling into a home found through Directrent"
+              src="/images/double-couple-2.jpg"
+              alt="Two couples relaxing together in a beautifully furnished Lagos apartment found through Directrent"
               fill
-              className="object-cover object-top"
+              className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 960px"
-              quality={80}
+              quality={85}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-primary-dark/70 via-primary-dark/30 to-transparent" />
             <div className="absolute bottom-6 left-6 right-6 max-w-md">
